@@ -1,7 +1,7 @@
 const button = document.querySelector('search-button')
 
-const apiUrl = 'https://api.hgbrasil.com/weather?format=json-cors&city_name='
-// 'https://api.hgbrasil.com/weather?format=json-cors&key=f3a558eb&city_name='
+const apiUrl =
+  'https://api.hgbrasil.com/weather?format=json-cors&key=0277e90a&city_name='
 
 search_button.addEventListener('click', function () {
   getInfos(search.value)
