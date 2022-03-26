@@ -1,0 +1,28 @@
+@media (max-width: 425px) {
+  html {
+    font-size: 58%;
+  }
+
+  header h1 {
+    font-size: 3rem;
+  }
+
+  #result-box {
+    width: 100%;
+  }
+
+  #search-box {
+    width: 100%;
+  }
+
+  .city {
+    font-size: 1.3rem;
+  }
+
+  #search {
+    font-size: 1.5rem;
+  }
+  #search_button {
+    font-size: 1.2rem;
+  }
+}
