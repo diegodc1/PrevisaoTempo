@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Previsão Tempo</title>
+
+    <!-- Style -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1>PrevisãoTempo.com</h1>
+    </header>
+
+    <main>
+      <section id="search-box">
+        <div class="city">
+          <p>Cidade:</p>
+        </div>
+
+        <input id="search" placeholder="Ex: Araucária, PR" />
+
+        <button id="search-button">Buscar</button>
+      </section>
+
+      <section id="result-box">
+        <div class="result-header">
+          <p>TEMPO AGORA EM</p>
+          <div class="city-name">
+            <img src="./assets/images/location.png" alt="" />
+            <h2>Araucária, PR</h2>
+          </div>
+        </div>
+
+        <div class="infos">
+          <img src="./assets/images/nublado-sol.svg" alt="" id="weather-img" />
+
+          <div class="temperature-result">
+            <h3>19º</h3>
+            <p>Muitas nuvens</p>
+          </div>
+        </div>
+
+        <div class="more-infos">
+          <div class="info 1">
+            <p>Sensação</p>
+            <p>19º</p>
+          </div>
+          <div class="info 2">
+            <p>Umidade</p>
+            <p>88%</p>
+          </div>
+          <div class="info 3">
+            <p>Pressão</p>
+            <p>920 hPa</p>
+          </div>
+          <div class="info 4">
+            <p>Vento</p>
+            <p>4 km/h</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+
+  <script src="./main.js"></script>
+</html>
