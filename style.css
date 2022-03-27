@@ -222,3 +222,58 @@ button:hover {
   align-items: center;
   justify-content: center;
 }
+
+/* Next days infos */
+.next-days-infos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  width: 60%;
+  border-radius: 6px;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  padding: 1.7rem;
+  border-radius: 10px;
+  background: var(--card-bg);
+
+  -webkit-box-shadow: 7px 7px 2px -5px rgb(226, 221, 226);
+  -moz-box-shadow: 7px 7px 2px -5px rgba(226, 221, 226);
+  box-shadow: 7px 7px 2px -5px rgba(226, 221, 226);
+}
+
+.box h3 {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.box p {
+  color: var(--gray);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.date-week {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 1.1rem;
+}
+.infos-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.next-days-img {
+  width: 3rem;
+  height: 3rem;
+}

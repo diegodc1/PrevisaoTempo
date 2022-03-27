@@ -1,9 +1,16 @@
 const button = document.querySelector('search-button')
 
-const apiUrl =
-  'https://api.hgbrasil.com/weather?format=json-cors&key=413cf1fc&city_name='
+let cityInitial = 'São Paulo'
 
-function getInfos(city) {
+const apiUrl =
+  'https://api.hgbrasil.com/weather?format=json-cors&key=af2a2efb&city_name='
+
+search_button.addEventListener('click', function () {
+  getTodayInfos(search.value)
+  getNextDaysInfos(search.value)
+})
+
+function getTodayInfos(city) {
   axios
     .get(apiUrl + city)
     .then(response => {
@@ -16,13 +23,10 @@ function getInfos(city) {
       sunrise.textContent = results.sunrise
       sunset.textContent = results.sunset
       changeImg(Number(results.condition_code))
+      console.log(results.img_id)
     })
     .catch(error => console.error(error))
 }
-
-search_button.addEventListener('click', function () {
-  getInfos(search.value)
-})
 
 function changeImg(code) {
   if (code == 27 || code == 31 || code == 32) {
@@ -84,6 +88,131 @@ function changeImg(code) {
   } else {
     weather_img.src = './assets/images/ensolarado-nuvens.svg'
   }
-
-  console.log(code + 'oi')
 }
+
+function getNextDaysInfos(city) {
+  axios
+    .get(apiUrl + city)
+    .then(response => {
+      const results = response.data.results.forecast
+      today_date.textContent = results[0].date
+      today_max.textContent = results[0].max + 'º'
+      today_min.textContent = results[0].min + 'º'
+      details_today.textContent = results[0].description
+      second_date.textContent = results[1].date
+      second_max.textContent = results[1].max + 'º'
+      second_min.textContent = results[1].min + 'º'
+      details_second.textContent = results[1].description
+      third_day.textContent = results[2].weekday + ' -  '
+      third_date.textContent = results[2].date
+      third_max.textContent = results[2].max + 'º'
+      third_min.textContent = results[2].min + 'º'
+      details_third.textContent = results[2].description
+      fourth_day.textContent = results[3].weekday + ' -  '
+      fourth_date.textContent = results[3].date
+      fourth_max.textContent = results[3].max + 'º'
+      fourth_min.textContent = results[3].min + 'º'
+      details_fourth.textContent = results[3].description
+      changeTodayImg(results[0].condition)
+      changeSecondImg(results[1].condition)
+      changeThirdImg(results[2].condition)
+      changeFourthImg(results[3].condition)
+    })
+    .catch(error => console.error(error))
+}
+
+function changeTodayImg(condition) {
+  if (condition == 'rain') {
+    today_img.src = '/assets/images/chuva-leve.svg'
+  } else if (condition == 'storm') {
+    today_img.src = '/assets/images/tempestade.svg'
+  } else if (condition == 'clear_day') {
+    today_img.src = '/assets/images/ensolarado.svg'
+  } else if (
+    condition == 'cloud' ||
+    condition == 'cloudly_day' ||
+    condition == 'cloudly_night'
+  ) {
+    today_img.src = '/assets/images/nublado.svg'
+  } else if (condition == 'snow') {
+    today_img.src = '/assets/images/neve.svg'
+  } else if (condition == 'hail') {
+    today_img.src = '/assets/images/chuva-granizo.svg'
+  } else if (condition == 'clear_night') {
+    today_img.src = '/assets/images/noite-limpa.svg'
+  } else {
+    today_img.src = '/assets/images/ensolarado-nuvens.svg'
+  }
+}
+function changeSecondImg(condition) {
+  if (condition == 'rain') {
+    second_img.src = '/assets/images/chuva-leve.svg'
+  } else if (condition == 'storm') {
+    second_img.src = '/assets/images/tempestade.svg'
+  } else if (condition == 'clear_day') {
+    second_img.src = '/assets/images/ensolarado.svg'
+  } else if (
+    condition == 'cloud' ||
+    condition == 'cloudly_day' ||
+    condition == 'cloudly_night'
+  ) {
+    second_img.src = '/assets/images/nublado.svg'
+  } else if (condition == 'snow') {
+    second_img.src = '/assets/images/neve.svg'
+  } else if (condition == 'hail') {
+    second_img.src = '/assets/images/chuva-granizo.svg'
+  } else if (condition == 'clear_night') {
+    second_img.src = '/assets/images/noite-limpa.svg'
+  } else {
+    second_img.src = '/assets/images/ensolarado-nuvens.svg'
+  }
+}
+function changeThirdImg(condition) {
+  if (condition == 'rain') {
+    third_img.src = '/assets/images/chuva-leve.svg'
+  } else if (condition == 'storm') {
+    third_img.src = '/assets/images/tempestade.svg'
+  } else if (condition == 'clear_day') {
+    third_img.src = '/assets/images/ensolarado.svg'
+  } else if (
+    condition == 'cloud' ||
+    condition == 'cloudly_day' ||
+    condition == 'cloudly_night'
+  ) {
+    third_img.src = '/assets/images/nublado.svg'
+  } else if (condition == 'snow') {
+    third_img.src = '/assets/images/neve.svg'
+  } else if (condition == 'hail') {
+    third_img.src = '/assets/images/chuva-granizo.svg'
+  } else if (condition == 'clear_night') {
+    third_img.src = '/assets/images/noite-limpa.svg'
+  } else {
+    third_img.src = '/assets/images/ensolarado-nuvens.svg'
+  }
+}
+function changeFourthImg(condition) {
+  if (condition == 'rain') {
+    fourth_img.src = '/assets/images/chuva-leve.svg'
+  } else if (condition == 'storm') {
+    fourth_img.src = '/assets/images/tempestade.svg'
+  } else if (condition == 'clear_day') {
+    fourth_img.src = '/assets/images/ensolarado.svg'
+  } else if (
+    condition == 'cloud' ||
+    condition == 'cloudly_day' ||
+    condition == 'cloudly_night'
+  ) {
+    fourth_img.src = '/assets/images/nublado.svg'
+  } else if (condition == 'snow') {
+    fourth_img.src = '/assets/images/neve.svg'
+  } else if (condition == 'hail') {
+    fourth_img.src = '/assets/images/chuva-granizo.svg'
+  } else if (condition == 'clear_night') {
+    fourth_img.src = '/assets/images/noite-limpa.svg'
+  } else {
+    fourth_img.src = '/assets/images/ensolarado-nuvens.svg'
+  }
+}
+
+getTodayInfos(cityInitial)
+getNextDaysInfos(cityInitial)

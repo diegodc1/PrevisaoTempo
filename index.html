@@ -36,6 +36,10 @@
         <button id="search_button">Buscar</button>
       </section>
 
+      <section class="alert">
+        <p>Digite corretamente o nome da cidade</p>
+      </section>
+
       <section id="result-box">
         <div class="result-header">
           <p>TEMPO AGORA EM</p>
@@ -70,6 +74,95 @@
           <div class="info">
             <p>Pôr do sol</p>
             <p id="sunset">-</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="next-days-infos">
+        <div class="box">
+          <div class="img">
+            <img
+              class="next-days-img"
+              id="today_img"
+              src="/assets/images/nublado-sol.svg"
+              alt=""
+            />
+          </div>
+
+          <div class="infos-details">
+            <h3>Hoje - <span id="today_date">11/11</span></h3>
+            <p>
+              Máxima <span id="today_max">27º</span> - Mínima
+              <span id="today_min">17º</span>
+            </p>
+            <p id="details_today">Nublado</p>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="img">
+            <img
+              class="next-days-img"
+              id="second_img"
+              src="/assets/images/ensolarado-nuvens.svg"
+              alt=""
+            />
+          </div>
+
+          <div class="infos-details">
+            <h3>Amanhã - <span id="second_date">12/12</span></h3>
+            <p>
+              Máxima <span id="second_max">27º</span> - Mínima
+              <span id="second_min">17º</span>
+            </p>
+            <p id="details_second">Sol com nuvens</p>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="img">
+            <img
+              class="next-days-img"
+              id="third_img"
+              src="/assets/images/ar-quente.svg"
+              alt=""
+            />
+          </div>
+
+          <div class="infos-details">
+            <div class="date-week">
+              <h3 id="third_day">Terça -</h3>
+              <h3 id="third_date">13/13</h3>
+            </div>
+            <p>
+              Máxima <span id="third_max">27º</span> - Mínima
+              <span id="third_min">17º</span>
+            </p>
+            <p id="details_third">Nublado</p>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="img">
+            <img
+              class="next-days-img"
+              id="fourth_img"
+              src="/assets/images/nublado-sol.svg"
+              alt=""
+            />
+          </div>
+
+          <div class="infos-details">
+            <div class="date-week">
+              <h3 id="fourth_day">Quarta -</h3>
+              <h3 id="fourth_date">14/14</h3>
+            </div>
+
+            <p>
+              Máxima <span id="fourth_max">27º</span> - Mínima
+              <span id="fourth_min">17º</span>
+            </p>
+            <p id="details_fourth">Nublado</p>
           </div>
         </div>
       </section>
