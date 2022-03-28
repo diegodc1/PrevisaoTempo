@@ -1,8 +1,10 @@
-const button = document.querySelector('search-button')
-const input = document.getElementById('search')
-let cityInitial = 'São Paulo'
 const apiUrl =
   'https://api.hgbrasil.com/weather?format=json-cors&key=af2a2efb&city_name='
+const locationApiUrl =
+  'https://api.hgbrasil.com/geoip?format=json-cors&key=af2a2efb&address=remote&precision=false'
+const button = document.querySelector('search-button')
+const input = document.getElementById('search')
+let cityInitial = ''
 
 //Click in the search button
 search_button.addEventListener('click', function () {
@@ -18,8 +20,18 @@ input.addEventListener('keyup', function (event) {
   }
 })
 
-//
-//
+//Get user geolocation
+function getUserLocation(cityInitial) {
+  axios
+    .get(locationApiUrl)
+    .then(response => {
+      cityInitial = response.data.results.city
+      getTodayInfos(cityInitial)
+      getNextDaysInfos(cityInitial)
+    })
+    .catch(error => console.error(error))
+}
+
 // Princial Informations
 function getTodayInfos(city) {
   axios
@@ -104,8 +116,6 @@ function changeImg(code) {
   }
 }
 
-//
-//
 //Next days informations
 function getNextDaysInfos(city) {
   axios
@@ -155,8 +165,6 @@ function changeFourthInfos(results) {
   details_fourth.textContent = results[3].description
 }
 
-//
-//
 // Change image of information boxes
 function changeTodayImg(condition) {
   if (condition == 'rain') {
@@ -254,5 +262,4 @@ function changeFourthImg(condition) {
   }
 }
 
-getTodayInfos(cityInitial)
-getNextDaysInfos(cityInitial)
+getUserLocation(cityInitial)
