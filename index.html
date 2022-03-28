@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Previsão Tempo</title>
+    <title>PrevisãoTempo.com</title>
+    <meta
+      property="og:site_name"
+      content="PrevisãoTempo.com | Confira a previsão do tempo para a sua cidade"
+    />
+
+    <meta
+      name="description"
+      content="PrevisãoTempo.com | Confira a previsão do tempo para a sua cidade"
+    />
 
     <!-- Style -->
     <link rel="stylesheet" href="style.css" />
@@ -16,6 +25,96 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Favicon -->
+    <div class="favicon">
+      <link
+        rel="shortcut icon"
+        href="./assets/images/favicon/favicon.ico"
+        type="image/x-icon"
+      />
+      <link
+        rel="icon"
+        href="./assets/images/favicon/favicon.ico"
+        type="image/x-icon"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="57x57"
+        href="./assets/images/favicon/"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="60x60"
+        href=".assets/images/favicon/apple-icon-60x60.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="72x72"
+        href=".assets/images/favicon/apple-icon-72x72.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="76x76"
+        href=".assets/images/favicon/apple-icon-76x76.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="114x114"
+        href=".assets/images/favicon/apple-icon-114x114.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="120x120"
+        href=".assets/images/favicon/apple-icon-120x120.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="144x144"
+        href=".assets/images/favicon/apple-icon-144x144.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="152x152"
+        href=".assets/images/favicon/apple-icon-152x152.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href=".assets/images/favicon/apple-icon-180x180.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="192x192"
+        href=".assets/images/favicon/android-icon-192x192.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href=".assets/images/favicon/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="96x96"
+        href=".assets/images/favicon/favicon-96x96.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href=".assets/images/favicon/favicon-16x16.png"
+      />
+      <link rel="manifest" href=".assets/images/favicon/manifest.json" />
+      <meta name="msapplication-TileColor" content="#ffffff" />
+      <meta
+        name="msapplication-TileImage"
+        content=".assets/images/favicon/ms-icon-144x144.png"
+      />
+      <meta name="theme-color" content="#ffffff" />
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
@@ -31,26 +130,42 @@
           <p>Cidade:</p>
         </div>
 
-        <input id="search" placeholder="Ex: Araucária, PR" />
+        <input
+          id="search"
+          type="search"
+          placeholder="Ex: São Paulo, SP"
+          autocomplete="on"
+          autocorrect="on"
+          autofocus
+        />
 
-        <button id="search_button">Buscar</button>
-      </section>
-
-      <section class="alert">
-        <p>Digite corretamente o nome da cidade</p>
+        <button id="search_button">
+          <img
+            id="search-img"
+            src="./assets/images/search-lupa.png"
+            alt="Figura de uma lupa na cor branca"
+          />
+        </button>
       </section>
 
       <section id="result-box">
         <div class="result-header">
           <p>TEMPO AGORA EM</p>
           <div class="city-name">
-            <img src="./assets/images/location.png" alt="" />
+            <img
+              src="./assets/images/location.png"
+              alt="Figura de localização na cor azul"
+            />
             <h2 id="city_result">Araucária, PR</h2>
           </div>
         </div>
 
         <div class="infos">
-          <img src="./assets/images/nublado-sol.svg" alt="" id="weather_img" />
+          <img
+            src="./assets/images/nublado-sol.svg"
+            alt="Figura representando a situção do tempo"
+            id="weather_img"
+          />
 
           <div class="temperature-result">
             <h3 id="temperature">?</h3>
@@ -105,7 +220,7 @@
               class="next-days-img"
               id="second_img"
               src="/assets/images/ensolarado-nuvens.svg"
-              alt=""
+              alt="Figura representando a situção do tempo"
             />
           </div>
 
@@ -125,7 +240,7 @@
               class="next-days-img"
               id="third_img"
               src="/assets/images/ar-quente.svg"
-              alt=""
+              alt="Figura representando a situção do tempo"
             />
           </div>
 
@@ -148,7 +263,7 @@
               class="next-days-img"
               id="fourth_img"
               src="/assets/images/nublado-sol.svg"
-              alt=""
+              alt="Figura representando a situção do tempo"
             />
           </div>
 
@@ -166,6 +281,14 @@
           </div>
         </div>
       </section>
+
+      <footer>
+        <p id="credits">Feito por Diego Alves</p>
+        <div class="social-medias">
+          <a href="https://github.com/diegodc1">Github</a>
+          <a href="https://www.instagram.com">Instagram</a>
+        </div>
+      </footer>
     </main>
   </body>
 

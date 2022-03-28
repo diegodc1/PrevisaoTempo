@@ -3,6 +3,13 @@
     font-size: 58%;
   }
 
+  header {
+    height: 8vh;
+  }
+
+  main {
+    height: 87vh;
+  }
   header h1 {
     font-size: 3rem;
   }
@@ -13,16 +20,48 @@
 
   #search-box {
     width: 100%;
+    height: 6rem;
   }
 
   .city {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 
   #search {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    width: 65%;
   }
   #search_button {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    width: 15%;
+  }
+
+  .temperature-result p {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .more-infos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .next-days-infos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .city {
+    padding: 2rem 0rem 2rem 0rem;
+  }
+
+  footer {
+    position: relative;
+    bottom: 0;
+    padding: 2rem 0rem 2rem 0rem;
+    height: 10rem;
+    margin-top: 4rem;
   }
 }
