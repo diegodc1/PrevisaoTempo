@@ -167,98 +167,114 @@ function changeFourthInfos(results) {
 
 // Change image of information boxes
 function changeTodayImg(condition) {
-  if (condition == 'rain') {
-    today_img.src = '/assets/images/chuva-leve.svg'
-  } else if (condition == 'storm') {
-    today_img.src = '/assets/images/tempestade.svg'
-  } else if (condition == 'clear_day') {
-    today_img.src = '/assets/images/ensolarado.svg'
-  } else if (
-    condition == 'cloud' ||
-    condition == 'cloudly_day' ||
-    condition == 'cloudly_night'
-  ) {
-    today_img.src = '/assets/images/nublado.svg'
-  } else if (condition == 'snow') {
-    today_img.src = '/assets/images/neve.svg'
-  } else if (condition == 'hail') {
-    today_img.src = '/assets/images/chuva-granizo.svg'
-  } else if (condition == 'clear_night') {
-    today_img.src = '/assets/images/noite-limpa.svg'
-  } else {
-    today_img.src = '/assets/images/ensolarado-nuvens.svg'
+  switch (condition) {
+    case 'rain':
+      today_img.src = '/assets/images/chuva-leve.svg'
+      break
+    case 'storm':
+      today_img.src = '/assets/images/tempestade.svg'
+      break
+    case 'clear_day':
+      today_img.src = '/assets/images/ensolarado.svg'
+      break
+    case 'cloud' || 'cloudly_day' || 'cloudly_night':
+      today_img.src = '/assets/images/nublado.svg'
+      break
+    case 'snow':
+      today_img.src = '/assets/images/neve.svg'
+      break
+    case 'hail':
+      today_img.src = '/assets/images/chuva-granizo.svg'
+      break
+    case 'clear_night':
+      today_img.src = '/assets/images/noite-limpa.svg'
+      break
+    default:
+      today_img.src = '/assets/images/ensolarado-nuvens.svg'
   }
 }
 
 function changeSecondImg(condition) {
-  if (condition == 'rain') {
-    second_img.src = '/assets/images/chuva-leve.svg'
-  } else if (condition == 'storm') {
-    second_img.src = '/assets/images/tempestade.svg'
-  } else if (condition == 'clear_day') {
-    second_img.src = '/assets/images/ensolarado.svg'
-  } else if (
-    condition == 'cloud' ||
-    condition == 'cloudly_day' ||
-    condition == 'cloudly_night'
-  ) {
-    second_img.src = '/assets/images/nublado.svg'
-  } else if (condition == 'snow') {
-    second_img.src = '/assets/images/neve.svg'
-  } else if (condition == 'hail') {
-    second_img.src = '/assets/images/chuva-granizo.svg'
-  } else if (condition == 'clear_night') {
-    second_img.src = '/assets/images/noite-limpa.svg'
-  } else {
-    second_img.src = '/assets/images/ensolarado-nuvens.svg'
+  switch (condition) {
+    case 'rain':
+      second_img.src = '/assets/images/chuva-leve.svg'
+      break
+    case 'storm':
+      second_img.src = '/assets/images/tempestade.svg'
+      break
+    case 'clear_day':
+      second_img.src = '/assets/images/ensolarado.svg'
+      break
+    case 'cloud' || 'cloudly_night' || 'cloudly_day':
+      second_img.src = '/assets/images/nublado.svg'
+      break
+    case 'snow':
+      second_img.src = '/assets/images/neve.svg'
+      break
+    case 'hail':
+      second_img.src = '/assets/images/chuva-granizo.svg'
+      break
+    case 'clear_night':
+      second_img.src = '/assets/images/noite-limpa.svg'
+      break
+    default:
+      second_img.src = '/assets/images/ensolarado-nuvens.svg'
   }
 }
 
 function changeThirdImg(condition) {
-  if (condition == 'rain') {
-    third_img.src = '/assets/images/chuva-leve.svg'
-  } else if (condition == 'storm') {
-    third_img.src = '/assets/images/tempestade.svg'
-  } else if (condition == 'clear_day') {
-    third_img.src = '/assets/images/ensolarado.svg'
-  } else if (
-    condition == 'cloud' ||
-    condition == 'cloudly_day' ||
-    condition == 'cloudly_night'
-  ) {
-    third_img.src = '/assets/images/nublado.svg'
-  } else if (condition == 'snow') {
-    third_img.src = '/assets/images/neve.svg'
-  } else if (condition == 'hail') {
-    third_img.src = '/assets/images/chuva-granizo.svg'
-  } else if (condition == 'clear_night') {
-    third_img.src = '/assets/images/noite-limpa.svg'
-  } else {
-    third_img.src = '/assets/images/ensolarado-nuvens.svg'
+  switch (condition) {
+    case 'rain':
+      third_img.src = '/assets/images/chuva-leve.svg'
+      break
+    case 'storm':
+      third_img.src = '/assets/images/tempestade.svg'
+      break
+    case 'clear_day':
+      third_img.src = '/assets/images/ensolarado.svg'
+      break
+    case 'cloud' || 'cloudly_night' || 'cloudly_day':
+      third_img.src = '/assets/images/nublado.svg'
+      break
+    case 'snow':
+      third_img.src = '/assets/images/neve.svg'
+      break
+    case 'hail':
+      third_img.src = '/assets/images/chuva-granizo.svg'
+      break
+    case 'clear_night':
+      third_img.src = '/assets/images/noite-limpa.svg'
+      break
+    default:
+      third_img.src = '/assets/images/ensolarado-nuvens.svg'
   }
 }
 
 function changeFourthImg(condition) {
-  if (condition == 'rain') {
-    fourth_img.src = '/assets/images/chuva-leve.svg'
-  } else if (condition == 'storm') {
-    fourth_img.src = '/assets/images/tempestade.svg'
-  } else if (condition == 'clear_day') {
-    fourth_img.src = '/assets/images/ensolarado.svg'
-  } else if (
-    condition == 'cloud' ||
-    condition == 'cloudly_day' ||
-    condition == 'cloudly_night'
-  ) {
-    fourth_img.src = '/assets/images/nublado.svg'
-  } else if (condition == 'snow') {
-    fourth_img.src = '/assets/images/neve.svg'
-  } else if (condition == 'hail') {
-    fourth_img.src = '/assets/images/chuva-granizo.svg'
-  } else if (condition == 'clear_night') {
-    fourth_img.src = '/assets/images/noite-limpa.svg'
-  } else {
-    fourth_img.src = '/assets/images/ensolarado-nuvens.svg'
+  switch (condition) {
+    case 'rain':
+      fourth_img.src = '/assets/images/chuva-leve.svg'
+      break
+    case 'storm':
+      fourth_img.src = '/assets/images/tempestade.svg'
+      break
+    case 'clear_day':
+      fourth_img.src = '/assets/images/ensolarado.svg'
+      break
+    case 'cloud' || 'cloudly_night' || 'cloudly_day':
+      fourth_img.src = '/assets/images/nublado.svg'
+      break
+    case 'snow':
+      fourth_img.src = '/assets/images/neve.svg'
+      break
+    case 'hail':
+      fourth_img.src = '/assets/images/chuva-granizo.svg'
+      break
+    case 'clear_night':
+      fourth_img.src = '/assets/images/noite-limpa.svg'
+      break
+    default:
+      fourth_img.src = '/assets/images/ensolarado-nuvens.svg'
   }
 }
 
