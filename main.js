@@ -40,6 +40,7 @@ function getTodayInfos(city) {
       const results = response.data.results
       changePricipalInfos(results)
       changeImg(Number(results.condition_code))
+      console.log(results.condition_code)
     })
     .catch(error => console.error(error))
 }
@@ -55,64 +56,81 @@ function changePricipalInfos(results) {
 }
 
 function changeImg(code) {
-  if (code == 27 || code == 31 || code == 32) {
-    weather_img.src = './assets/images/ensolarado.svg'
-  } else if (
-    code == 9 ||
-    code == 11 ||
-    code == 12 ||
-    code == 40 ||
-    code == 45
-  ) {
-    weather_img.src = './assets/images/chuva-leve.svg'
-  } else if (
-    code == 0 ||
-    code == 1 ||
-    code == 2 ||
-    code == 3 ||
-    code == 4 ||
-    code == 14 ||
-    code == 21 ||
-    code == 37 ||
-    code == 38 ||
-    code == 39 ||
-    code == 47
-  ) {
-    weather_img.src = './assets/images/tempestade.svg'
-  } else if (
-    code == 16 ||
-    code == 46 ||
-    code == 41 ||
-    code == 42 ||
-    code == 13 ||
-    code == 15 ||
-    code == 43
-  ) {
-    weather_img.src = './assets/images/neve.svg'
-  } else if (
-    code == 19 ||
-    code == 20 ||
-    code == 22 ||
-    code == 23 ||
-    code == 24
-  ) {
-    weather_img.src = './assets/images/ventania'
-  } else if (code == 8 || code == 10 || code == 17 || code == 18) {
-    weather_img.src = './assets/images/geada.svg'
-  } else if (code == 26 || code == 28 || code == 29 || code == 30) {
-    weather_img.src = './assets/images/nublado.svg'
-  } else if (code == 34 || code == 44) {
-    weather_img.src = './assets/images/ensolarado-nuvens.svg'
-  } else if (code == 5 || code == 6 || code == 7 || code == 35) {
-    weather_img.src = './assets/images/chuva-granizo.svg'
-  } else if (code == 25) {
-    weather_img.src = './assets/images/tempo-frio.svg'
-  } else if (code == 33) {
-    weather_img.src = './assets/images/estrelado.svg'
-  } else if (code == 36) {
-    weather_img.src = './assets/images/ar-quente.svg'
-  } else {
-    weather_img.src = './assets/images/ensolarado-nuvens.svg'
+  switch (code) {
+    case 27:
+    case 31:
+    case 32:
+      weather_img.src = './assets/images/ensolarado.svg'
+      break
+    case 9:
+    case 11:
+    case 12:
+    case 40:
+    case 45:
+      weather_img.src = './assets/images/chuva-leve.svg'
+      break
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 14:
+    case 21:
+    case 37:
+    case 38:
+    case 39:
+    case 47:
+      weather_img.src = './assets/images/tempestade.svg'
+      break
+    case 16:
+    case 46:
+    case 41:
+    case 42:
+    case 13:
+    case 15:
+    case 43:
+      weather_img.src = './assets/images/neve.svg'
+      break
+    case 19:
+    case 20:
+    case 22:
+    case 23:
+    case 24:
+      weather_img.src = './assets/images/ventania'
+      break
+    case 8:
+    case 10:
+    case 17:
+    case 18:
+      weather_img.src = './assets/images/geada.svg'
+      break
+    case 26:
+    case 28:
+    case 29:
+    case 30:
+      weather_img.src = './assets/images/nublado.svg'
+      break
+    case 34:
+    case 44:
+      weather_img.src = './assets/images/ensolarado-nuvens.svg'
+      break
+    case 5:
+    case 6:
+    case 7:
+    case 35:
+      weather_img.src = './assets/images/chuva-granizo.svg'
+      break
+    case 25:
+      weather_img.src = './assets/images/tempo-frio.svg'
+      break
+    case 33:
+      weather_img.src = './assets/images/estrelado.svg'
+      break
+    case 36:
+      weather_img.src = './assets/images/ar-quente.svg'
+      break
+    default:
+      weather_img.src = './assets/images/ensolarado-nuvens.svg'
   }
 }
 
@@ -177,7 +195,9 @@ function changeTodayImg(condition) {
     case 'clear_day':
       today_img.src = '/assets/images/ensolarado.svg'
       break
-    case 'cloud' || 'cloudly_day' || 'cloudly_night':
+    case 'cloud':
+    case 'cloudly_day':
+    case 'cloudly_night':
       today_img.src = '/assets/images/nublado.svg'
       break
     case 'snow':
@@ -205,7 +225,9 @@ function changeSecondImg(condition) {
     case 'clear_day':
       second_img.src = '/assets/images/ensolarado.svg'
       break
-    case 'cloud' || 'cloudly_night' || 'cloudly_day':
+    case 'cloud':
+    case 'cloudly_night':
+    case 'cloudly_day':
       second_img.src = '/assets/images/nublado.svg'
       break
     case 'snow':
@@ -233,7 +255,9 @@ function changeThirdImg(condition) {
     case 'clear_day':
       third_img.src = '/assets/images/ensolarado.svg'
       break
-    case 'cloud' || 'cloudly_night' || 'cloudly_day':
+    case 'cloud':
+    case 'cloudly_night':
+    case 'cloudly_day':
       third_img.src = '/assets/images/nublado.svg'
       break
     case 'snow':
